@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Global Theme Colors ---------- */
+:root {
+  --color-primary: #2563eb; /* Blue 600 */
+  --color-primary-dark: #1e40af; /* Blue 900 */
+  --color-accent: #3b82f6; /* Blue 500 */
+  --color-bg: #f9fafb; /* Gray 50 */
+  --color-text: #111827; /* Gray 900 */
+  --color-muted: #6b7280; /* Gray 500 */
+}
+
+html, body {
+  @apply bg-[var(--color-bg)] text-[var(--color-text)] min-h-screen;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-xl font-medium transition;
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-xl font-medium border transition;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  @apply rounded-2xl shadow-sm border bg-white transition hover:shadow-md;
+}
+
+/* ---------- Links ---------- */
+a {
+  @apply text-[var(--color-primary)] transition;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* ---------- Headers ---------- */
+h1, h2, h3, h4, h5 {
+  @apply font-bold tracking-tight;
+}
+
+/* ---------- Utility Styles ---------- */
+.text-muted {
+  color: var(--color-muted);
+}
