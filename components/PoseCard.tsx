@@ -122,7 +122,7 @@ export default function PoseCard({ pose }: { pose: Pose }) {
         )}
 
         {/* ❤ and ＋ on the card */}
-        <div className="absolute bottom-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition">
+        <div className="absolute bottom-2 right-2 flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
           <button
             onClick={onHeartClick}
             className={`p-2 rounded-full bg-white/80 backdrop-blur shadow border ${
@@ -157,11 +157,11 @@ export default function PoseCard({ pose }: { pose: Pose }) {
           aria-modal="true"
         >
           <div
-            className="relative flex gap-4 max-w-[95vw] max-h-[95vh]"
+            className="relative flex flex-col md:flex-row gap-4 max-w-[95vw] max-h-[95vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Image */}
-            <div className="relative">
+            <div className="relative shrink-0">
               <div className="absolute top-3 right-3 flex gap-2 z-10">
                 <button
                   onClick={onAiTipsClick}
@@ -211,14 +211,14 @@ export default function PoseCard({ pose }: { pose: Pose }) {
                 alt={saved.title}
                 width={2000}
                 height={2000}
-                className="max-h-[90vh] max-w-[70vw] object-contain"
+                className="max-h-[60vh] md:max-h-[90vh] max-w-[90vw] md:max-w-[70vw] object-contain"
                 priority
               />
             </div>
 
             {/* AI Tips panel */}
             {(aiLoading || aiTips) && (
-              <div className="w-72 shrink-0 bg-white/10 backdrop-blur rounded-2xl p-4 overflow-y-auto max-h-[90vh] border border-white/20">
+              <div className="w-full md:w-72 shrink-0 bg-white/10 backdrop-blur rounded-2xl p-4 overflow-y-auto max-h-[40vh] md:max-h-[90vh] border border-white/20">
                 <div className="flex items-center gap-2 mb-3">
                   <Sparkles size={15} className="text-violet-300" />
                   <span className="text-white text-sm font-semibold">AI Shooting Tips</span>
