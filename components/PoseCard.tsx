@@ -1,9 +1,9 @@
 "use client";
-import { Heart, Plus } from "lucide-react";
+import { Heart, Plus, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { useApp, SavedPose } from "@/context/AppContext";
 import type { Pose } from "@/lib/types";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef } from "react";
 import ProjectPicker from "./ProjectPicker";
 import FavoritePicker from "./FavoritePicker";
 
@@ -16,6 +16,9 @@ export default function PoseCard({ pose }: { pose: Pose }) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [favPickerOpen, setFavPickerOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [aiTips, setAiTips] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+  const abortRef = useRef<AbortController | null>(null);
 
   const isFav = useMemo(
     () => isInAnyFavoriteCollection(pose.id),
@@ -32,10 +35,8 @@ export default function PoseCard({ pose }: { pose: Pose }) {
   const onHeartClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (isFav) {
-      // remove from ALL collections immediately
       removePoseFromAllFavoriteCollections(saved.id);
     } else {
-      // add to a collection
       setFavPickerOpen(true);
     }
   };
@@ -43,6 +44,40 @@ export default function PoseCard({ pose }: { pose: Pose }) {
   const onPlusClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     setPickerOpen(true);
+  };
+
+  const onAiTipsClick = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (aiLoading) {
+      abortRef.current?.abort();
+      return;
+    }
+    setAiTips("");
+    setAiLoading(true);
+    const ctrl = new AbortController();
+    abortRef.current = ctrl;
+    try {
+      const res = await fetch("/api/ai/pose-tips", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ poseTitle: saved.title, category: pose.category }),
+        signal: ctrl.signal,
+      });
+      if (!res.ok || !res.body) throw new Error("Request failed");
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        setAiTips((prev) => prev + decoder.decode(value, { stream: true }));
+      }
+    } catch (err: any) {
+      if (err.name !== "AbortError") {
+        setAiTips("Could not load tips. Make sure ANTHROPIC_API_KEY is set.");
+      }
+    } finally {
+      setAiLoading(false);
+    }
   };
 
   return (
@@ -121,47 +156,82 @@ export default function PoseCard({ pose }: { pose: Pose }) {
           role="dialog"
           aria-modal="true"
         >
-          <div className="relative max-w-[95vw] max-h-[95vh]" onClick={(e) => e.stopPropagation()}>
-            <div className="absolute top-3 right-3 flex gap-2 z-10">
-              <button
-                onClick={onHeartClick}
-                className={`p-2 rounded-full bg-white/25 hover:bg-white/35 text-white backdrop-blur border border-white/20 ${
-                  isFav ? "text-pink-300" : "text-white"
-                }`}
-                title={isFav ? "Remove from favorites" : "Save to favorites"}
-                aria-label={isFav ? "Remove from favorites" : "Save to favorites"}
-              >
-                <Heart size={18} fill={isFav ? "currentColor" : "none"} />
-              </button>
-              <button
-                onClick={onPlusClick}
-                className="p-2 rounded-full bg-white/25 hover:bg-white/35 text-white backdrop-blur border border-white/20"
-                title="Add to project"
-                aria-label="Add to project"
-              >
-                <Plus size={18} />
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setLightboxOpen(false);
-                }}
-                className="p-2 rounded-full bg-white/25 hover:bg-white/35 text-white backdrop-blur border border-white/20"
-                title="Close"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+          <div
+            className="relative flex gap-4 max-w-[95vw] max-h-[95vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Image */}
+            <div className="relative">
+              <div className="absolute top-3 right-3 flex gap-2 z-10">
+                <button
+                  onClick={onAiTipsClick}
+                  className={`p-2 rounded-full backdrop-blur border border-white/20 transition ${
+                    aiLoading
+                      ? "bg-violet-500/70 text-white"
+                      : "bg-white/25 hover:bg-white/35 text-white"
+                  }`}
+                  title={aiLoading ? "Stop generating" : "Get AI shooting tips"}
+                  aria-label="Get AI shooting tips"
+                >
+                  <Sparkles size={18} />
+                </button>
+                <button
+                  onClick={onHeartClick}
+                  className={`p-2 rounded-full bg-white/25 hover:bg-white/35 text-white backdrop-blur border border-white/20 ${
+                    isFav ? "text-pink-300" : "text-white"
+                  }`}
+                  title={isFav ? "Remove from favorites" : "Save to favorites"}
+                  aria-label={isFav ? "Remove from favorites" : "Save to favorites"}
+                >
+                  <Heart size={18} fill={isFav ? "currentColor" : "none"} />
+                </button>
+                <button
+                  onClick={onPlusClick}
+                  className="p-2 rounded-full bg-white/25 hover:bg-white/35 text-white backdrop-blur border border-white/20"
+                  title="Add to project"
+                  aria-label="Add to project"
+                >
+                  <Plus size={18} />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setLightboxOpen(false);
+                  }}
+                  className="p-2 rounded-full bg-white/25 hover:bg-white/35 text-white backdrop-blur border border-white/20"
+                  title="Close"
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <Image
+                src={pose.imageUrl}
+                alt={saved.title}
+                width={2000}
+                height={2000}
+                className="max-h-[90vh] max-w-[70vw] object-contain"
+                priority
+              />
             </div>
 
-            <Image
-              src={pose.imageUrl}
-              alt={saved.title}
-              width={2000}
-              height={2000}
-              className="max-h-[90vh] max-w-[90vw] object-contain"
-              priority
-            />
+            {/* AI Tips panel */}
+            {(aiLoading || aiTips) && (
+              <div className="w-72 shrink-0 bg-white/10 backdrop-blur rounded-2xl p-4 overflow-y-auto max-h-[90vh] border border-white/20">
+                <div className="flex items-center gap-2 mb-3">
+                  <Sparkles size={15} className="text-violet-300" />
+                  <span className="text-white text-sm font-semibold">AI Shooting Tips</span>
+                  {aiLoading && (
+                    <span className="ml-auto text-[10px] text-violet-300 animate-pulse">generating…</span>
+                  )}
+                </div>
+                <p className="text-white/90 text-xs leading-relaxed whitespace-pre-wrap">
+                  {aiTips}
+                  {aiLoading && <span className="animate-pulse">▌</span>}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       )}
