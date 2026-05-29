@@ -1,55 +1,67 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
+      "static/chunks/23-72ccbb43045dd2eb.js",
+      "static/chunks/main-app-9808cd3b207ae239.js",
+      "static/chunks/app/_not-found/page-6bbf6d64fd14e58e.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
+      "static/chunks/23-72ccbb43045dd2eb.js",
+      "static/chunks/main-app-9808cd3b207ae239.js",
+      "static/css/1f90576f8080b1b7.css",
+      "static/chunks/231-68734817ea6b5326.js",
+      "static/chunks/app/layout-1d07eb8c9158035e.js"
     ],
-    "/auto/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/auto/page.js"
+    "/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
+      "static/chunks/23-72ccbb43045dd2eb.js",
+      "static/chunks/main-app-9808cd3b207ae239.js",
+      "static/chunks/231-68734817ea6b5326.js",
+      "static/chunks/app/page-77fa11882bbd4eb3.js"
     ],
-    "/projects/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/projects/page.js"
+    "/about/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
+      "static/chunks/23-72ccbb43045dd2eb.js",
+      "static/chunks/main-app-9808cd3b207ae239.js",
+      "static/chunks/231-68734817ea6b5326.js",
+      "static/chunks/app/about/page-fcb71d3f3de83e04.js"
     ],
-    "/favorites/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/favorites/page.js"
+    "/contact/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
+      "static/chunks/23-72ccbb43045dd2eb.js",
+      "static/chunks/main-app-9808cd3b207ae239.js",
+      "static/chunks/app/contact/page-664cd909248e8123.js"
     ],
-    "/favorites/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/favorites/[id]/page.js"
+    "/hardware/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
+      "static/chunks/23-72ccbb43045dd2eb.js",
+      "static/chunks/main-app-9808cd3b207ae239.js",
+      "static/chunks/231-68734817ea6b5326.js",
+      "static/chunks/app/hardware/page-44295a3f014217fd.js"
     ],
-    "/shotlists/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/shotlists/page.js"
+    "/support/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
+      "static/chunks/23-72ccbb43045dd2eb.js",
+      "static/chunks/main-app-9808cd3b207ae239.js",
+      "static/chunks/231-68734817ea6b5326.js",
+      "static/chunks/app/support/page-34020bf60766c151.js"
     ],
-    "/tutorials/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tutorials/page.js"
-    ],
-    "/projects/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/projects/[id]/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+    "/pricing/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
+      "static/chunks/23-72ccbb43045dd2eb.js",
+      "static/chunks/main-app-9808cd3b207ae239.js",
+      "static/chunks/231-68734817ea6b5326.js",
+      "static/chunks/app/pricing/page-2aa0ecaa8f241965.js"
     ]
   }
 }
