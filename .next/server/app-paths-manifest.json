@@ -1,9 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/auto/page": "app/auto/page.js",
-  "/projects/page": "app/projects/page.js",
-  "/tutorials/page": "app/tutorials/page.js",
   "/page": "app/page.js",
-  "/projects/[id]/page": "app/projects/[id]/page.js",
-  "/api/list-images/route": "app/api/list-images/route.js"
+  "/about/page": "app/about/page.js",
+  "/hardware/page": "app/hardware/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/support/page": "app/support/page.js"
 }
