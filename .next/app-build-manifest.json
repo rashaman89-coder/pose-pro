@@ -12,9 +12,9 @@
       "static/chunks/fd9d1056-f5ca11604835b0e5.js",
       "static/chunks/23-72ccbb43045dd2eb.js",
       "static/chunks/main-app-9808cd3b207ae239.js",
-      "static/css/5e4b66bbd947d6ed.css",
+      "static/css/1f90576f8080b1b7.css",
       "static/chunks/231-68734817ea6b5326.js",
-      "static/chunks/app/layout-679ddf9ec310f4db.js"
+      "static/chunks/app/layout-1d07eb8c9158035e.js"
     ],
     "/page": [
       "static/chunks/webpack-cb86a99cd2f791d1.js",
@@ -22,7 +22,7 @@
       "static/chunks/23-72ccbb43045dd2eb.js",
       "static/chunks/main-app-9808cd3b207ae239.js",
       "static/chunks/231-68734817ea6b5326.js",
-      "static/chunks/app/page-c5f820e6ed9db9d6.js"
+      "static/chunks/app/page-77fa11882bbd4eb3.js"
     ],
     "/about/page": [
       "static/chunks/webpack-cb86a99cd2f791d1.js",
@@ -30,23 +30,7 @@
       "static/chunks/23-72ccbb43045dd2eb.js",
       "static/chunks/main-app-9808cd3b207ae239.js",
       "static/chunks/231-68734817ea6b5326.js",
-      "static/chunks/app/about/page-bcb0e513237bfee2.js"
-    ],
-    "/hardware/page": [
-      "static/chunks/webpack-cb86a99cd2f791d1.js",
-      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
-      "static/chunks/23-72ccbb43045dd2eb.js",
-      "static/chunks/main-app-9808cd3b207ae239.js",
-      "static/chunks/231-68734817ea6b5326.js",
-      "static/chunks/app/hardware/page-e0dd565f8a539136.js"
-    ],
-    "/pricing/page": [
-      "static/chunks/webpack-cb86a99cd2f791d1.js",
-      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
-      "static/chunks/23-72ccbb43045dd2eb.js",
-      "static/chunks/main-app-9808cd3b207ae239.js",
-      "static/chunks/231-68734817ea6b5326.js",
-      "static/chunks/app/pricing/page-22b3f815631a448d.js"
+      "static/chunks/app/about/page-fcb71d3f3de83e04.js"
     ],
     "/contact/page": [
       "static/chunks/webpack-cb86a99cd2f791d1.js",
@@ -55,13 +39,29 @@
       "static/chunks/main-app-9808cd3b207ae239.js",
       "static/chunks/app/contact/page-664cd909248e8123.js"
     ],
+    "/hardware/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
+      "static/chunks/23-72ccbb43045dd2eb.js",
+      "static/chunks/main-app-9808cd3b207ae239.js",
+      "static/chunks/231-68734817ea6b5326.js",
+      "static/chunks/app/hardware/page-44295a3f014217fd.js"
+    ],
     "/support/page": [
       "static/chunks/webpack-cb86a99cd2f791d1.js",
       "static/chunks/fd9d1056-f5ca11604835b0e5.js",
       "static/chunks/23-72ccbb43045dd2eb.js",
       "static/chunks/main-app-9808cd3b207ae239.js",
       "static/chunks/231-68734817ea6b5326.js",
-      "static/chunks/app/support/page-cc0b867633d665e9.js"
+      "static/chunks/app/support/page-34020bf60766c151.js"
+    ],
+    "/pricing/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-f5ca11604835b0e5.js",
+      "static/chunks/23-72ccbb43045dd2eb.js",
+      "static/chunks/main-app-9808cd3b207ae239.js",
+      "static/chunks/231-68734817ea6b5326.js",
+      "static/chunks/app/pricing/page-2aa0ecaa8f241965.js"
     ]
   }
 }
