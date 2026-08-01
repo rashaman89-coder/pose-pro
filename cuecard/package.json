@@ -10,7 +10,8 @@
     "test": "tsx --test lib/*.test.ts",
     "build:images": "node scripts/build-images.mjs",
     "build:catalog": "node scripts/build-catalog.mjs",
-    "content": "npm run build:images && npm run build:catalog"
+    "content": "npm run build:images && npm run build:catalog",
+    "fetch:generated": "node scripts/fetch-generated.mjs"
   },
   "dependencies": {
     "next": "16.2.11",

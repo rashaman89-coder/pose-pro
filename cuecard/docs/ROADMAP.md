@@ -42,10 +42,20 @@ makes it **bigger**. A feature nobody can pay for is a hobby.
 
 ## Library — the moat
 
-- [ ] **Grow past 95 poses.** The catalog is 87 `portraits` and almost nothing
-      in `ceremony`, `reception` or `getting-ready`. That skew is visible in the
-      shot list, which groups into two sections instead of six. Generate and
-      direct 40+ poses across the thin moments.
+- [ ] **Finish the queued poses.** `content/pose-queue.json` holds 12 poses
+      written direction-first, covering the moments the catalog is missing
+      entirely (`first-look`, `golden-hour`) and the ones it barely has
+      (`ceremony`, `reception`, `bridal-party`, `family`). Three of the twelve
+      have images generated and listed in `content/generated-manifest.json`.
+      The rest need a generation run — **this needs the Higgsfield MCP, which
+      scheduled sessions do not carry**, so it happens in an interactive
+      session, not the autonomous loop.
+- [ ] **Then run the fetch.** `npm run fetch:generated` on a machine with
+      ordinary internet, cull the four variants down to the best one each, then
+      `npm run content`. The sandbox cannot do this — see PROGRESS.
+- [ ] **Keep growing past 107.** Even with the queue landed, `reception` and
+      `ceremony` stay thin. Aim for at least eight poses in every moment so the
+      shot list groups into six sections rather than two.
 - [ ] **Second category.** Engagement or elopement. Proves the pipeline handles
       more than one, and doubles the SEO surface.
 - [ ] **Re-read the direction text.** It was written per batch; a second pass

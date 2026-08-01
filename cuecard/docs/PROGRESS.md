@@ -5,6 +5,45 @@ anything the next iteration or the owner needs to know.
 
 ---
 
+## 2026-08-01 — Twelve new poses, written before they were photographed
+
+The catalog's worst problem was coverage, not count: 87 of 95 poses sat in
+`portraits`, while `first-look` and `golden-hour` had literally none. The shot
+list grouped into two sections instead of six, which undersells the feature
+that sells the product.
+
+Twelve new poses now exist in `content/pose-queue.json` covering exactly those
+gaps, plus `bridal-party` and `family` — two subjects the type system has
+always allowed and the library never had.
+
+**The method changed, and it's better.** The first 95 were photographed and
+then described. These were written first and the image prompt derived from the
+finished direction, so the frame is made to match the words rather than the
+words guessing at the frame. It also means the writing — the part people
+actually pay for — doesn't wait on image generation.
+
+**The constraint that shaped this run:** generation works and costs almost
+nothing (0.12 credits for four 2K images), but this sandbox's egress allowlist
+does not include the image CDN, so generated files cannot be pulled in here.
+Higgsfield's own sandbox can reach them, which confirmed the images are real
+and decode correctly — but there is no sanctioned path from there into this
+repository. Rather than smuggle megabytes of base64 through a transcript, the
+URLs are committed and `npm run fetch:generated` pulls them wherever there is
+ordinary internet.
+
+Three of the twelve have images generated so far. **The remaining nine need an
+interactive session — the scheduled loop runs without MCP connectors, so it
+cannot generate images.** The roadmap says so explicitly.
+
+The queue pipeline crosses three naming conventions (hand-written pose id →
+fetch filename → image-build slug) and that join runs on the owner's machine
+where a failure would be invisible to me. It has five tests.
+
+**Unverified and worth an eye:** I could not see any generated image. The
+prompts are detailed and the model is Higgsfield's editorial portrait model,
+but nobody has confirmed the look matches the existing library. Check that
+before culling the variants.
+
 ## 2026-08-01 — Foundation: the whole loop, working end to end
 
 Built Cuecard from nothing to a product a photographer could actually use

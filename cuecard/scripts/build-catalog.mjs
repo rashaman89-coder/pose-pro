@@ -10,6 +10,8 @@ import path from "node:path";
 const ROOT = process.cwd();
 const IMAGES = path.join(ROOT, "lib", "generated", "images.json");
 const META = path.join(ROOT, "content", "pose-meta.json");
+/** Poses authored direction-first, whose images were generated from their prompts. */
+const QUEUE = path.join(ROOT, "content", "pose-queue.json");
 const OUT = path.join(ROOT, "lib", "generated", "catalog.json");
 
 const FRAMINGS = new Set(["full-length", "half-body", "close-up"]);
@@ -75,14 +77,37 @@ async function readJson(file, fallback) {
   }
 }
 
+/**
+ * Queue poses arrive as several generated variants of one written pose, so a
+ * file lands as `first-look-shoulder-tap-v2.png` and slugifies with the
+ * category prefixed. Strip the variant suffix and any doubled category so the
+ * image finds the direction that produced it.
+ */
+export function candidateKeys(imageId, category) {
+  const withoutVariant = imageId.replace(/-v\d+$/, "");
+  const undoubled = withoutVariant.replace(
+    new RegExp(`^${category}-${category}-`),
+    `${category}-`,
+  );
+  const unprefixed = undoubled.replace(new RegExp(`^${category}-`), "");
+  return [imageId, withoutVariant, undoubled, `${category}-${unprefixed}`, unprefixed];
+}
+
 async function main() {
   const images = await readJson(IMAGES);
   const metaList = await readJson(META, []);
+  const queueList = await readJson(QUEUE, []);
+
   const metaById = new Map(metaList.map((m) => [m.id, m]));
+  // Queue entries win on a clash: they were written first and the image was
+  // made to match them, so their direction is the more reliable of the two.
+  for (const entry of queueList) metaById.set(entry.id, entry);
 
   const missing = [];
   const poses = images.map((img, index) => {
-    const meta = metaById.get(img.id);
+    const meta = candidateKeys(img.id, img.category)
+      .map((key) => metaById.get(key))
+      .find(Boolean);
     if (!meta) missing.push(img.id);
     const inferred = inferFromId(img.id);
 
@@ -140,7 +165,11 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+// Only rebuild when run as a command — importing this file for its helpers
+// (the tests do) must not rewrite the catalog as a side effect.
+if (process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1]))) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

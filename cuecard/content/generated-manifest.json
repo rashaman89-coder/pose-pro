@@ -1,0 +1,31 @@
+{
+  "note": "Images generated from the prompts in pose-queue.json. This container cannot reach the CDN (egress policy), so the files are fetched by `npm run fetch:generated` on a normal machine. Four variants per pose — keep the best, delete the rest, then run `npm run content`.",
+  "model": "soul_2 (text2image_soul_v2), 1536x2048",
+  "generatedISO": "2026-08-01",
+  "poses": {
+    "wedding-first-look-shoulder-tap": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021551_ef777239-1d26-4911-ba75-50fd29015fdc.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021551_5ccea6d7-088f-4d24-bdbb-f23e4f4a84da.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021551_abb4264c-f003-4a80-ada2-5488e3cd84c1.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021551_1777a69a-1de7-4bde-8e86-5007a8270be0.png"
+    ],
+    "wedding-first-look-foreheads-together": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021624_f7974a05-7621-4fd2-abb2-cce4f237c48f.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021624_ea103d0b-3e90-4f17-9c32-3be83ae34787.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021624_936aae10-d9bb-4dca-ae2b-25b39bc49191.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021624_637f2626-ed25-46bf-ab0b-42c35d9e603d.png"
+    ],
+    "wedding-golden-hour-lift-laugh": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022408_894e7436-6a1f-43ab-b243-ae941bd0a1d1.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022408_eb299340-7234-4697-80f5-3ca22208d3a4.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022408_aa5de72f-432f-4411-8c4a-22a81a54defe.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022408_995964d2-8609-44a4-ac96-4ddf4c2cfad3.png"
+    ],
+    "wedding-golden-hour-silhouette-kiss": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_b2535c8b-d191-4dd8-b818-6c74d7135ec1.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_9cf3f0f5-ea54-48c4-b1a8-47eac033b233.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_fe98b411-6060-464d-b4fd-efa06a9cb609.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_ac421d92-1033-42c3-b76a-bc9840b39ea6.png"
+    ]
+  }
+}
