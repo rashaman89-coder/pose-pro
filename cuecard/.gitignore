@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+
+# Local env / checkout keys
+.env
+.env*.local
+
+# Raw exports live outside the repo — only the generated gallery is committed.
+source-images
+
+# Smoke-test screenshots
+screenshots

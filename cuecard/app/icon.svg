@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#1c1815"/>
+  <!-- Two stacked cards: the deck the couple swipes through. -->
+  <rect x="7.5" y="8" width="13" height="16" rx="2.5" fill="#a8603c"/>
+  <rect x="12.5" y="8" width="13" height="16" rx="2.5" fill="#fbf9f6"/>
+  <path d="M19 19.6l-2.7-2.6a1.6 1.6 0 0 1 2.25-2.26l.45.44.45-.44A1.6 1.6 0 0 1 21.7 17z" fill="#bf4a60"/>
+</svg>
