@@ -31,9 +31,13 @@ repository. Rather than smuggle megabytes of base64 through a transcript, the
 URLs are committed and `npm run fetch:generated` pulls them wherever there is
 ordinary internet.
 
-Three of the twelve have images generated so far. **The remaining nine need an
-interactive session — the scheduled loop runs without MCP connectors, so it
-cannot generate images.** The roadmap says so explicitly.
+All twelve now have four generated frames each — 48 images, and every URL was
+confirmed to return 200 before committing. That check earned its keep: one URL
+404'd because the filename timestamp is **not** uniform across a batch. Three
+siblings landed on one second and the fourth on the next. Anyone regenerating
+should read each URL back individually rather than deriving it from a batch.
+
+Cost for the whole run was under three credits.
 
 The queue pipeline crosses three naming conventions (hand-written pose id →
 fetch filename → image-build slug) and that join runs on the owner's machine

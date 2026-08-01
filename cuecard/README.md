@@ -78,6 +78,23 @@ editorial layer in `content/pose-meta.json`.
 npm run content        # images + catalog
 ```
 
+New poses are written **before** they are photographed. A pose goes into
+`content/pose-queue.json` with its direction, lighting, lens and coaching
+notes, plus the `prompt` that generates a matching frame — so the image is made
+to fit the words rather than the words guessing at the image.
+
+Once the frames have been generated, their URLs land in
+`content/generated-manifest.json` and:
+
+```bash
+npm run fetch:generated   # downloads four variants per pose, verifies each decodes
+# delete the variants you don't want, keeping the best frame per pose
+npm run content
+```
+
+The fetch is a separate step because the environment that authors the poses
+cannot reach the image CDN. It runs anywhere with ordinary internet.
+
 `content/pose-meta.json` is where the value lives — the direction, lighting,
 lens and coaching notes for each pose. `lib/generated/` is derived and safe to
 delete.

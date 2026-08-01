@@ -1,6 +1,7 @@
 {
-  "note": "Images generated from the prompts in pose-queue.json. This container cannot reach the CDN (egress policy), so the files are fetched by `npm run fetch:generated` on a normal machine. Four variants per pose — keep the best, delete the rest, then run `npm run content`.",
-  "model": "soul_2 (text2image_soul_v2), 1536x2048",
+  "note": "Images generated from the prompts in pose-queue.json. This container cannot reach the CDN (egress policy), so files are pulled by `npm run fetch:generated` on a machine with ordinary internet. Four variants per pose: keep the best, delete the rest, then `npm run content`.",
+  "verified": "All 48 URLs were confirmed to return HTTP 200 before this file was committed. Worth knowing if you regenerate: the timestamp in the filename is not uniform across a batch — one of these landed a second later than its siblings and 404'd until it was read back individually. Do not assume a batch shares a timestamp.",
+  "model": "soul_2 (text2image_soul_v2), 1536x2048 PNG",
   "generatedISO": "2026-08-01",
   "poses": {
     "wedding-first-look-shoulder-tap": [
@@ -15,17 +16,65 @@
       "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021624_936aae10-d9bb-4dca-ae2b-25b39bc49191.png",
       "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021624_637f2626-ed25-46bf-ab0b-42c35d9e603d.png"
     ],
+    "wedding-golden-hour-silhouette-kiss": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_b2535c8b-d191-4dd8-b818-6c74d7135ec1.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_9cf3f0f5-ea54-48c4-b1a8-47eac033b233.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_fe98b411-6060-464d-b4fd-efa06a9cb609.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_ac421d92-1033-42c3-b76a-bc9840b39ea6.png"
+    ],
     "wedding-golden-hour-lift-laugh": [
       "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022408_894e7436-6a1f-43ab-b243-ae941bd0a1d1.png",
       "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022408_eb299340-7234-4697-80f5-3ca22208d3a4.png",
       "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022408_aa5de72f-432f-4411-8c4a-22a81a54defe.png",
       "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022408_995964d2-8609-44a4-ac96-4ddf4c2cfad3.png"
     ],
-    "wedding-golden-hour-silhouette-kiss": [
-      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_b2535c8b-d191-4dd8-b818-6c74d7135ec1.png",
-      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_9cf3f0f5-ea54-48c4-b1a8-47eac033b233.png",
-      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_fe98b411-6060-464d-b4fd-efa06a9cb609.png",
-      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_021950_ac421d92-1033-42c3-b76a-bc9840b39ea6.png"
+    "wedding-ceremony-ring-exchange": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022616_089437f7-0c93-4535-b66f-8b4b5109eee5.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022616_d73797af-32c9-4b6b-9ef2-e56327d786e9.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022616_d58028ac-42bb-4864-91de-2509f68f593c.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022616_138b398f-a553-4907-9128-f067493d2c8a.png"
+    ],
+    "wedding-ceremony-first-kiss-aisle": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022646_f82aafc9-a56f-4d87-b872-55285eb4b031.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022646_a6c93d9e-1f67-4d0c-aa00-385da66dc0c8.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022646_21b3914a-e0c6-4547-b32b-ae9b1552099b.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022646_57f1ac3e-6528-45d1-8f68-a5a2a9aa5b04.png"
+    ],
+    "wedding-ceremony-parents-faces": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022711_445e5041-ce4f-4e79-97a1-e4a3d27e1d46.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022711_97d7490c-b165-479a-b386-b55affe1c173.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022711_44d4cf7e-2e1a-4c50-90f1-12cccc8ecfc8.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022711_603fd53e-5cf3-44b4-a806-84ff4a7a8623.png"
+    ],
+    "wedding-reception-first-dance-wide": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022802_1ec31433-acc7-44cb-89c3-9474a417d911.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022802_7414b199-b6de-4a47-ace2-f02dea312652.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022802_d4cf3676-c9ba-4312-a44d-093f454cbe1c.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022802_fbf56f15-9aa0-47a6-afba-d5cff8932842.png"
+    ],
+    "wedding-reception-speech-reaction": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022826_abf93e74-b5d7-47cb-a221-2958b83fc753.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022826_4e8d2789-f8e5-461d-a011-932be7ab9cba.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022826_bf9c8400-09ba-4a34-8509-17b9b37e25bf.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022826_214193d9-2f8d-403b-8c0f-efb0688ee846.png"
+    ],
+    "wedding-getting-ready-veil-mother": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022850_d88143ae-bc9d-478b-9596-56eac42b20e2.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022850_9ee01ba2-0b6b-4b49-a029-51c8954e5132.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022850_5d1b0cb7-90ba-47bd-a90f-8d73ad9178f5.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022850_6c0ae3cc-4f94-4fb2-be15-d34ef3f884f1.png"
+    ],
+    "wedding-bridal-party-walking-line": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022916_7803f78d-31e5-42d5-950d-dc3a4e130416.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022916_5f858e76-260b-40a1-bdbe-f44517ca5c12.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022915_3f61067d-12cb-4ef4-a367-aed5b98ac242.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022916_e33d9cc0-7e2a-40ff-9198-3fc0473ab39c.png"
+    ],
+    "wedding-golden-hour-walking-away": [
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022942_322dee5e-f295-4e91-9da0-180679743f5c.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022942_de864cb9-e5ff-43c0-b578-26b881f90ed4.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022942_5afe09ef-bb89-4fb6-9b8c-55adbc96fcbd.png",
+      "https://d8j0ntlcm91z4.cloudfront.net/user_354A9xa4Djyzc1sg6a8ZaWH9zHr/hf_20260801_022942_5fc5a45d-7bec-4ee9-b3f7-104c782d7891.png"
     ]
   }
 }

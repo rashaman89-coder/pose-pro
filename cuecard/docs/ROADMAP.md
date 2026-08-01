@@ -42,17 +42,21 @@ makes it **bigger**. A feature nobody can pay for is a hobby.
 
 ## Library — the moat
 
-- [ ] **Finish the queued poses.** `content/pose-queue.json` holds 12 poses
-      written direction-first, covering the moments the catalog is missing
-      entirely (`first-look`, `golden-hour`) and the ones it barely has
-      (`ceremony`, `reception`, `bridal-party`, `family`). Three of the twelve
-      have images generated and listed in `content/generated-manifest.json`.
-      The rest need a generation run — **this needs the Higgsfield MCP, which
-      scheduled sessions do not carry**, so it happens in an interactive
-      session, not the autonomous loop.
-- [ ] **Then run the fetch.** `npm run fetch:generated` on a machine with
-      ordinary internet, cull the four variants down to the best one each, then
-      `npm run content`. The sandbox cannot do this — see PROGRESS.
+- [ ] **Land the 12 queued poses — needs the owner, one command.**
+      `content/pose-queue.json` holds 12 poses written direction-first,
+      covering the moments the catalog missed entirely (`first-look`,
+      `golden-hour`) and the ones it barely had (`ceremony`, `reception`,
+      `bridal-party`, `family`). All 48 frames are generated and their URLs
+      verified in `content/generated-manifest.json`.
+
+      ```
+      npm run fetch:generated    # then delete the variants you don't want
+      npm run content
+      ```
+
+      This cannot run in the sandbox — the image CDN is off the egress
+      allowlist. Nobody has looked at these frames yet; check they match the
+      library's look before culling.
 - [ ] **Keep growing past 107.** Even with the queue landed, `reception` and
       `ceremony` stay thin. Aim for at least eight poses in every moment so the
       shot list groups into six sections rather than two.
